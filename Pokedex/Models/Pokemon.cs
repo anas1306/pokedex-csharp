@@ -1,10 +1,11 @@
 namespace Pokedex.Models;
+using System.Collections.Generic;
 
 public class Pokemon
 {
     public int Id { get; set; }
     public string? Name { get; set; }
-    public List<PokemonType>? Types { get; set; }
+    public List<TypeInfo>? Types { get; set; }
     public int Height { get; set; }
     public int Weight { get; set; }
     public Sprites? Sprites { get; set; }

@@ -1,6 +1,7 @@
 using Pokedex.Services;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
+using Pokedex.Models;
 
 namespace Pokedex.ViewModels;
 
@@ -15,6 +16,7 @@ public partial class MainViewModel : ViewModelBase
 
     private async Task LoadPokemon() 
     {
-        Greeting = await new PokeApiService().GetPokemon("pikachu");
+        Pokemon? pokemon = await new PokeApiService().GetPokemon("pikachu");
+        Greeting = pokemon?.Name ?? "Name not found.";
     }
 }
