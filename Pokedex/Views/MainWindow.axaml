@@ -15,7 +15,7 @@
     <Grid ColumnDefinitions="*,*">
         <TextBlock Grid.Column="0" Text="Sprite goes here" />
         <StackPanel Grid.Column="1">
-            <TextBlock Text="Stats go here" />
+            <TextBlock Text="{Binding SelectedPokemon.Name}" />
         </StackPanel>
     </Grid>
 </Window>

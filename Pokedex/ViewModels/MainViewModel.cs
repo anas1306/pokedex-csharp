@@ -8,7 +8,7 @@ namespace Pokedex.ViewModels;
 public partial class MainViewModel : ViewModelBase
 {
     [ObservableProperty]
-    public partial string Greeting { get; set; } = "Welcome to Pokedex!";
+    public partial Pokemon? SelectedPokemon { get; set; }
     public MainViewModel()
     {
         _ = LoadPokemon();
@@ -17,6 +17,6 @@ public partial class MainViewModel : ViewModelBase
     private async Task LoadPokemon() 
     {
         Pokemon? pokemon = await new PokeApiService().GetPokemon("pikachu");
-        Greeting = pokemon?.Name ?? "Name not found.";
+        SelectedPokemon = pokemon;
     }
 }
