@@ -13,9 +13,11 @@
     </Design.DataContext>
 
     <Grid ColumnDefinitions="*,*">
-        <TextBlock Grid.Column="0" Text="Sprite goes here" />
+        <Image Grid.Column="0" Source="{Binding SpriteImage}" />
         <StackPanel Grid.Column="1">
             <TextBlock Text="{Binding SelectedPokemon.Name}" />
+            <TextBlock Text="{Binding SelectedPokemon.Weight}" />
+            <TextBlock Text="{Binding SelectedPokemon.Height}" />
         </StackPanel>
     </Grid>
 </Window>
