@@ -15,17 +15,33 @@
 
     <Grid ColumnDefinitions="*,*">
         <Image Grid.Column="0" Source="{Binding SpriteImage}" />
-        <StackPanel Grid.Column="1">
-            <TextBlock Text="{Binding SelectedPokemon.Name}" />
-            <TextBlock Text="{Binding SelectedPokemon.Weight}" />
-            <TextBlock Text="{Binding SelectedPokemon.Height}" />
-            <ItemsControl ItemsSource="{Binding SelectedPokemon.Types}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate DataType="models:PokemonType">
-                        <TextBlock Text="{Binding Type.Name}" />
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+        <StackPanel Grid.Column="1" Margin="10">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                <TextBlock Text="No. " />
+                <TextBlock Text="{Binding SelectedPokemon.Id}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                <TextBlock Text="Name: " />
+                <TextBlock Text="{Binding SelectedPokemon.Name}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                <TextBlock Text="Type: " />
+                <ItemsControl ItemsSource="{Binding SelectedPokemon.Types}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="models:PokemonType">
+                            <TextBlock Text="{Binding Type.Name}" Margin="0,0,5,0" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                <TextBlock Text="Height: " />
+                <TextBlock Text="{Binding SelectedPokemon.Height}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                <TextBlock Text="Weight: " />
+                <TextBlock Text="{Binding SelectedPokemon.Weight}" />
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

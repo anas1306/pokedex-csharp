@@ -21,7 +21,7 @@ public partial class MainViewModel : ViewModelBase
 
     private async Task LoadPokemon() 
     {
-        Pokemon? pokemon = await new PokeApiService().GetPokemon("squirtle");
+        Pokemon? pokemon = await new PokeApiService().GetPokemon("blaziken");
         SelectedPokemon = pokemon;
         if (pokemon?.Sprites?.front_default != null) {
             byte[] imageBytes = await new HttpClient().GetByteArrayAsync(pokemon.Sprites.front_default);
